@@ -1,27 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:basics/style_text.dart';
 
-var startAligment = Alignment.topLeft;
-var endAligment = Alignment.bottomRight;
+const startAligment = Alignment.topLeft;
+const endAligment = Alignment.bottomRight;
 
 class GradienteContainer extends StatelessWidget {
-  const GradienteContainer({super.key});
+  const GradienteContainer(this.color1, this.color2, {super.key});
+
+  final Color color1;
+  final Color color2;
+
   @override
   Widget build(context) {
-    return  Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: const [
-                Color.fromARGB(255, 26, 1, 80),
-                Color.fromARGB(255, 45, 7, 98),
-              ],
-              begin: startAligment,
-              end: endAligment,
-            )
-          ),
-          child: const Center(
-            child: StyleText(),
-          ),
-        );
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+        colors: [color1, color2],
+        begin: startAligment,
+        end: endAligment,
+      )),
+      child: const Center(
+        child: StyleText('Softline!'),
+      ),
+    );
   }
 }
+
+// class GradienteContainer extends StatelessWidget {
+//   const GradienteContainer({super.key, required this.colors});
+
+//   final List<Color> colors;
+
+//   @override
+//   Widget build(context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//           gradient: LinearGradient(
+//         colors: colors,
+//         begin: startAligment,
+//         end: endAligment,
+//       )),
+//       child: const Center(
+//         child: StyleText('Softline!'),
+//       ),
+//     );
+//   }
+// }
