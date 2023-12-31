@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:basics/style_text.dart';
+import 'package:basics/dice_roller.dart';
 
 const startAligment = Alignment.topLeft;
 const endAligment = Alignment.bottomRight;
@@ -19,12 +19,15 @@ class GradienteContainer extends StatelessWidget {
         begin: startAligment,
         end: endAligment,
       )),
+
       child: const Center(
-        child: StyleText('Softline!'),
+         child: DiceRoller(),
       ),
     );
   }
 }
+
+
 
 // class GradienteContainer extends StatelessWidget {
 //   const GradienteContainer({super.key, required this.colors});
